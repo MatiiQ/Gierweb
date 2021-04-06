@@ -1,8 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/users">Users</router-link>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <router-link to="/"><img src="./assets/logoGierweb.png" width="150" height="150" style="max-height:none;">
+          </router-link>
+        </a>
+
+          <a class="navbar-item">
+            <router-link to="/games">Games</router-link>
+          </a>
+
+          <a class="navbar-item">
+            <router-link to="/libraries">Libraries</router-link>
+          </a>
+          <a class="navbar-item">
+            <router-link to="/users">Users</router-link>
+          </a>
+      </div>
+    </nav>
   </div>
   <router-view/>
 </template>
