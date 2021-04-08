@@ -6,3 +6,14 @@ export interface IUser {
     gender: string;
     ip_address: string;
 }
+export interface IGame {
+    id: number;
+    game_name: string;
+    developer: string;
+    genre: string;
+    platform: string[];
+    release_date: string;
+    sold: number;
+    players_number: number;
+    positive_reviews: number;
+}

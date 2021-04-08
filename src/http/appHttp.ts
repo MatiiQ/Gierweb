@@ -8,8 +8,10 @@ class HttpApiClient {
 			httpsAgent: {
 				rejectUnauthorized: false,
 			},
-			//baseURL: 'https://api.mockaroo.com/api/',
-			baseURL: 'http://localhost:3000/',
+			//baseURL: 'https://my.api.mockaroo.com/',
+			//baseURL: 'http://localhost:3000/',
+			//heroku
+			baseURL: 'https://gier-web.herokuapp.com/',
 			headers: {
 				'Content-Type': 'application/json'
 			}

@@ -19,18 +19,23 @@ import { IUser } from '../utils/interfaces';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  //mounted: function () {
-  //  userService.getUser({count: 100, key: '162e61d0'}).then((users) => this.allUsers = users);
-  //},
+  mounted: function () {
+    userService.getUser({}).then((users) => {
+        this.allUsers = users.data
+        this.filteredResources = users.data
+        //console.log(this.filteredResources)
+      });
+  },
   components: {
     User
   },
-  mounted: function () {
-    userService.getUser().then((result) => {
-      this.allUsers = result.data
-      this.filteredResources = result.data
-    });
-  },
+  //mounted: function () {
+  //  userService.getUser().then((result) => {
+  //    this.allUsers = result.data
+  //    this.filteredResources = result.data
+  //    console.log(this.filteredResources)
+  //  });
+  //},
   data() {
 	  	return {
 	    	allUsers: [] as IUser[],
@@ -40,13 +45,14 @@ export default defineComponent({
   },
   watch: {
     searchQuery() {
+      console.log(this.filteredResources);
       console.log(this.searchQuery);
       this.filteredResources = this.allUsers.filter(post =>
-        (post.first_name.toLowerCase().startsWith(this.searchQuery)
+        (post.first_name.toLowerCase().startsWith(this.searchQuery.toLowerCase())
         ||
-        post.last_name.toLowerCase().startsWith(this.searchQuery)
+        post.last_name.toLowerCase().startsWith(this.searchQuery.toLowerCase())
         ||
-        post.email.toLowerCase().startsWith(this.searchQuery)
+        post.email.toLowerCase().startsWith(this.searchQuery.toLowerCase())
         )
       );
       console.log(this.filteredResources);
