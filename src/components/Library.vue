@@ -19,7 +19,7 @@
 import { defineComponent } from 'vue';
 import { IGame } from '../utils/interfaces';
 import { table2props } from '../utils/interfaces';
-import gameService from '../http/gameService';
+import gameIdService from '../http/gameIdService';
 
 export default defineComponent({
   props: {
@@ -34,7 +34,7 @@ export default defineComponent({
     }
   },
   mounted: function () {
-  gameService.getGame(this.game!.id_game).then((game) => {
+  gameIdService.getGame(this.game!.id_game).then((game) => {
       this.gameData = game.data
     });
   },

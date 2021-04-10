@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import libraryService from '../http/libraryService';
+import libraryUserService from '../http/libraryUserService';
 import { IGame } from '../utils/interfaces';
 import Game from '../components/Library.vue';
 import { defineComponent } from 'vue';
@@ -21,7 +21,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   props: ['userId'],
   mounted: function () {
-    libraryService.getLibrary(this.userId).then((games) => {
+    libraryUserService.getLibrary(this.userId).then((games) => {
         this.allGames = games.data
         this.filteredResources = games.data
       });
