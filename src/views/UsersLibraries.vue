@@ -4,8 +4,8 @@
       <input class="input" type="text" v-model="searchQuery" placeholder="Search">
     </div>
   </div>
-  <div class="library">
-	 <game v-for="game in filteredResources"
+  <div class="library columns">
+  <game v-for="game in filteredResources"
         v-bind:key='game.id_user'
         v-bind:game='game'
       ></game>
@@ -21,7 +21,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   props: ['userId'],
   mounted: function () {
-    libraryService.getLibrary({'': this.userId}).then((games) => {
+    libraryService.getLibrary(this.userId).then((games) => {
         this.allGames = games.data
         this.filteredResources = games.data
       });

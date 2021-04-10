@@ -17,3 +17,7 @@ export interface IGame {
     players_number: number;
     positive_reviews: number;
 }
+export interface table2props {
+    id_user: number;
+    id_game: number;
+}
