@@ -58,7 +58,7 @@ export default defineComponent({
         }
     },
     goToGameDetails(gameId: number) {
-        this.$router.push({ name: 'GameDetails', params: { gameId: gameId } });
+        this.$router.push({ path: `/games/${gameId}`});
     }
   }
 })
