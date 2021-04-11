@@ -4,7 +4,7 @@
       <input class="input" type="text" v-model="searchQuery" placeholder="Search">
     </div>
   </div>
-  <div class="library columns">
+  <div class="library columns is-multiline is-centered">
   <game v-for="game in filteredResources"
         v-bind:key='game.id_user'
         v-bind:game='game'
