@@ -1,13 +1,13 @@
 import http from './appHttp';
 
-class UserService {
-	public getGame(gameId: number) {
+class GameService {
+	public getGame(params?: any) {
 	  //return http.get('62fbf740', params);
-	  //return http.get('game_user-U?', params);
+	  //return all games
 	  //heroku
-	  return http.get(`games/${gameId}`);
+	  return http.get('games', params);
 	}
 }
 
-const userService = new UserService();
-export default userService;
+const gameService = new GameService();
+export default gameService;

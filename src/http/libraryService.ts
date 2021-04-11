@@ -1,13 +1,13 @@
 import http from './appHttp';
 
-class UserService {
-	public getLibrary(userId: number) {
+class LibraryService {
+	public getLibrary(params?: any) {
 	  //return http.get('62fbf740', params);
-	  //return http.get('game_user-U?', params);
+	  //return all pairs of IDs for a game and user
 	  //heroku
-	  return http.get(`gamesUsers/user/${userId}`);
+	  return http.get('gamesUsers', params);
 	}
 }
 
-const userService = new UserService();
-export default userService;
+const libraryService = new LibraryService();
+export default libraryService;
