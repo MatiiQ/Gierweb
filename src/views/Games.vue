@@ -51,13 +51,6 @@ export default defineComponent({
   components: {
     Game,
   },
-  //mounted: function () {
-  //  userService.getUser().then((result) => {
-  //    this.allUsers = result.data
-  //    this.filteredResources = result.data
-  //    console.log(this.filteredResources)
-  //  });
-  //},
   data() {
     return {
       allGames: [] as IGame[],
@@ -67,18 +60,18 @@ export default defineComponent({
   },
   watch: {
     searchQuery() {
-      console.log(this.filteredResources);
-      console.log(this.searchQuery);
+      //console.log(this.filteredResources);
+      //console.log(this.searchQuery);
       this.filteredResources = this.allGames.filter(
-        (post) =>
-          post.game_name
+        (game) =>
+          game.game_name
             .toLowerCase()
             .startsWith(this.searchQuery.toLowerCase()) ||
-          post.developer
+          game.developer
             .toLowerCase()
             .startsWith(this.searchQuery.toLowerCase())
       );
-      console.log(this.filteredResources);
+      //console.log(this.filteredResources);
     },
   },
 });

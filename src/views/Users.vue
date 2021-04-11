@@ -44,8 +44,8 @@ export default defineComponent({
   },
   watch: {
     searchQuery() {
-      console.log(this.filteredResources);
-      console.log(this.searchQuery);
+      //console.log(this.filteredResources);
+      //console.log(this.searchQuery);
       this.filteredResources = this.allUsers.filter(
         (post) =>
           post.first_name
@@ -56,7 +56,7 @@ export default defineComponent({
             .startsWith(this.searchQuery.toLowerCase()) ||
           post.email.toLowerCase().startsWith(this.searchQuery.toLowerCase())
       );
-      console.log(this.filteredResources);
+      //console.log(this.filteredResources);
     },
   },
 });

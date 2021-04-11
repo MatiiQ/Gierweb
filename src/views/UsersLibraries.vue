@@ -35,13 +35,6 @@ export default defineComponent({
   components: {
     Game,
   },
-  //mounted: function () {
-  //  userService.getUser().then((result) => {
-  //    this.allUsers = result.data
-  //    this.filteredResources = result.data
-  //    console.log(this.filteredResources)
-  //  });
-  //},
   data() {
     return {
       allGames: [] as IGame[],
@@ -49,6 +42,8 @@ export default defineComponent({
       filteredResources: [] as IGame[],
     };
   },
+  // szukajka nie działa - filteredResources i allGames przeciez biorą z jsona z parami ID a nie z grami
+  // to by trzeba było przenieść do components/Library.vue tylko wtedy pole szukajki inaczej trzeba wrzucić
   watch: {
     searchQuery() {
       //console.log(this.filteredResources);
@@ -64,7 +59,7 @@ export default defineComponent({
           game.genre.toLowerCase().startsWith(this.searchQuery.toLowerCase())
       );
       //console.log(this.filteredResources);
-    },
+    }
   }
 });
 </script>
