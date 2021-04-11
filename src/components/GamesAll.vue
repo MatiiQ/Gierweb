@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr @click="goToGameDetails(game.id)">
     <td>{{ game.game_name }}</td>
     <td>{{ game.developer }}</td>
     <td>{{ game.genre }}</td>
@@ -19,5 +19,10 @@ export default defineComponent({
   props: {
     game: Object as () => IGame,
   },
+  methods: {
+      goToGameDetails(gameId: number) {
+          this.$router.push({ name: 'GameDetails', params: { gameId: gameId } });
+      }
+  }
 });
 </script>
