@@ -1,7 +1,7 @@
 import http from './appHttp';
 
 class GameGenreService {
-	public getGame(genre: string) {
+	public getGame(genre: any) {
 	  //return http.get('62fbf740', params);
 	  //return games with given genre
 	  //heroku

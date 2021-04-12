@@ -9,23 +9,6 @@
       />
     </div>
   </div>
-  <p>Pick a genre!</p>
-  <div class="buttons has-addons is-centered" @click="goToGamesGenres($event)">
-    <button class="button is-primary is-outlined">Action</button>
-    <button class="button is-primary is-outlined">Action-adventure</button>
-    <button class="button is-primary is-outlined">Adventure</button>
-    <button class="button is-primary is-outlined">Horror</button>
-    <button class="button is-primary is-outlined">MMO</button>
-    <button class="button is-primary is-outlined">MOBA</button>
-    <button class="button is-primary is-outlined">Platformer</button>
-    <button class="button is-primary is-outlined">Puzzler</button>
-    <button class="button is-primary is-outlined">RPG</button>
-    <button class="button is-primary is-outlined">Sandbox</button>
-    <button class="button is-primary is-outlined">Simulator</button>
-    <button class="button is-primary is-outlined">Sports</button>
-    <button class="button is-primary is-outlined">Strategy</button>
-    <button class="button is-primary is-outlined">Survial</button>
-  </div>
   <div>
     <table class="table is-bordered is-hoverable is-fullwidth"> 
       <thead>
@@ -52,17 +35,17 @@
 </template>
 
 <script lang="ts">
-import gameService from "../http/gameService";
+import gameGenreService from "../http/gameGenreService";
 import Game from "../components/GamesAll.vue";
 import { IGame } from "../utils/interfaces";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   mounted: function () {
-    gameService.getGame({}).then((games) => {
+    gameGenreService.getGame(this.$route.params.genre).then((games) => {
       this.allGames = games.data;
       this.filteredResources = games.data;
-      //console.log(this.filteredResources)
+      console.log(this.filteredResources);
     });
   },
   components: {
@@ -90,12 +73,6 @@ export default defineComponent({
       );
       //console.log(this.filteredResources);
     },
-  },
-  methods: {
-      goToGamesGenres(button: any) {
-        const genre = button.target.textContent;
-        this.$router.push({ path: `/games/genres/${genre}`});
-      }
   }
 });
 </script>

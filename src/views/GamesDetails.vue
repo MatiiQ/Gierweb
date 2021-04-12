@@ -9,12 +9,12 @@
         </h2>
       </header>
         <div class="card-content p-3">
-          <p><b>Developer: {{ gameDetails.developer }}</b></p>
-          <p>Genre: {{ gameDetails.genre }}</p>
+          <p>Developer: {{ gameDetails.developer }}</p>
+          <p @click="goToGamesGenres(gameDetails.genre)"><b>Genre: {{ gameDetails.genre }} </b> (click to see all games from that genre!)</p>
           <p>Release date: {{ gameDetails.release_date }}</p>
           <p>Sold copies: {{ gameDetails.sold }}</p>
           <p>Players number: {{ gameDetails.players_number }}</p>
-          <p>Positive reviews: {{ gameDetails.positive_reviews }}</p>
+          <p>Positive reviews: {{ gameDetails.positive_reviews }}%</p>
         </div>
       <footer class="card-footer">
         <div
@@ -65,6 +65,9 @@ export default defineComponent({
           return "card-footer-item ";
       }
     },
+    goToGamesGenres(genre: string) {
+        this.$router.push({ path: `/games/genres/${genre}`});
+      }
   },
 });
 </script>
