@@ -10,7 +10,7 @@
       </header>
         <div class="card-content p-3">
           <p>Developer: {{ gameDetails.developer }}</p>
-          <p @click="goToGamesGenres(gameDetails.genre)"><b>Genre: {{ gameDetails.genre }} </b> (click to see all games from that genre!)</p>
+          <p class="clickable-paragraph" @click="goToGamesGenres(gameDetails.genre)"><b>Genre: {{ gameDetails.genre }} </b></p>
           <p>Release date: {{ gameDetails.release_date }}</p>
           <p>Sold copies: {{ gameDetails.sold }}</p>
           <p>Players number: {{ gameDetails.players_number }}</p>

@@ -10,21 +10,9 @@
     </div>
   </div>
   <p>Pick a genre!</p>
-  <div class="buttons has-addons is-centered" @click="goToGamesGenres($event)">
-    <button class="button is-primary is-outlined">Action</button>
-    <button class="button is-primary is-outlined">Action-adventure</button>
-    <button class="button is-primary is-outlined">Adventure</button>
-    <button class="button is-primary is-outlined">Horror</button>
-    <button class="button is-primary is-outlined">MMO</button>
-    <button class="button is-primary is-outlined">MOBA</button>
-    <button class="button is-primary is-outlined">Platformer</button>
-    <button class="button is-primary is-outlined">Puzzler</button>
-    <button class="button is-primary is-outlined">RPG</button>
-    <button class="button is-primary is-outlined">Sandbox</button>
-    <button class="button is-primary is-outlined">Simulator</button>
-    <button class="button is-primary is-outlined">Sports</button>
-    <button class="button is-primary is-outlined">Strategy</button>
-    <button class="button is-primary is-outlined">Survial</button>
+  <div class="buttons has-addons is-centered">
+    <button class="button is-secondary is-outlined" @click="genreFilter('')">Reset genre</button>
+    <button v-for="genre in genres" :key="genre" class="button is-primary is-outlined" @click="genreFilter(genre)">{{genre}}</button>
   </div>
   <div>
     <table class="table is-bordered is-hoverable is-fullwidth"> 
@@ -56,6 +44,7 @@ import gameService from "../http/gameService";
 import Game from "../components/GamesAll.vue";
 import { IGame } from "../utils/interfaces";
 import { defineComponent } from "vue";
+import { genres } from '../utils/arrays'
 
 export default defineComponent({
   mounted: function () {
@@ -73,29 +62,61 @@ export default defineComponent({
       allGames: [] as IGame[],
       searchQuery: "",
       filteredResources: [] as IGame[],
+      genres: genres,
+      filteredGenre: "",
     };
   },
   watch: {
     searchQuery() {
-      //console.log(this.filteredResources);
-      //console.log(this.searchQuery);
-      this.filteredResources = this.allGames.filter(
-        (game) =>
-          game.game_name
-            .toLowerCase()
-            .startsWith(this.searchQuery.toLowerCase()) ||
-          game.developer
-            .toLowerCase()
-            .startsWith(this.searchQuery.toLowerCase())
-      );
-      //console.log(this.filteredResources);
+      this.filterGames();
     },
+    filteredGenre() {
+      this.filterGames();
+    }
   },
   methods: {
-      goToGamesGenres(button: any) {
-        const genre = button.target.textContent;
-        this.$router.push({ path: `/games/genres/${genre}`});
-      }
+    genreFilter(genre: string) {
+      // if (genre!='')
+      //   this.filteredResources = this.allGames.filter(
+      //     (game) =>
+      //       game.genre === genre,
+      //       this.filteredGenre = genre,
+      //   );
+      // else {
+      //   this.filteredResources = this.allGames,
+      //   this.filteredGenre = ''
+      // }
+      this.filteredGenre = genre;
+    },
+    filterGames(): void {
+      this.filteredResources = this.allGames.filter(
+        (game) =>
+        {
+          if(this.filteredGenre) {
+            return game.genre === this.filteredGenre
+          } else {
+            return true
+          }
+        }
+      )
+      this.filteredResources = this.filteredResources.filter(
+        (game) =>
+        {
+          if(this.searchQuery) {
+            return (
+              game.game_name
+                .toLowerCase()
+                .startsWith(this.searchQuery.toLowerCase()) ||
+              game.developer
+                .toLowerCase()
+                .startsWith(this.searchQuery.toLowerCase())
+            )
+          } else {
+            return true
+          }
+        }
+      );
+    }
   }
 });
 </script>
