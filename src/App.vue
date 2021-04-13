@@ -12,7 +12,7 @@
           </a>
 
           <a class="navbar-item">
-            <router-link to="/libraries">Libraries</router-link>
+            <router-link to="/charts">Charts</router-link>
           </a>
           <a class="navbar-item">
             <router-link to="/users">Users</router-link>

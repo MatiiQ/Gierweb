@@ -34,6 +34,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Library',
     component: () => import('../views/UsersLibraries.vue'), 
     props: true
+  },
+  {
+    path: '/charts',
+    name: 'Charts',
+    component: () => import('../views/Charts.vue') 
   }
 ]
 
