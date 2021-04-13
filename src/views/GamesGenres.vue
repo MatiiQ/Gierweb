@@ -27,7 +27,7 @@
     <button class="button is-primary is-outlined">Survial</button>
   </div>
   <div>
-    <table class="table is-bordered is-hoverable is-fullwidth"> 
+    <table class="table is-bordered is-fullwidth"> 
       <thead>
         <tr>
           <th>Game name</th>

@@ -6,17 +6,21 @@
           <router-link to="/"><img src="./assets/logoGierweb.png" width="150" height="150" style="max-height:none;">
           </router-link>
         </a>
-
+        <div class="clickable-paragraph margin-auto">
           <a class="navbar-item">
             <router-link to="/games">Games</router-link>
           </a>
-
+        </div>
+        <div class="clickable-paragraph">
           <a class="navbar-item">
             <router-link to="/charts">Charts</router-link>
           </a>
+        </div>
+        <div class="clickable-paragraph">
           <a class="navbar-item">
             <router-link to="/users">Users</router-link>
           </a>
+        </div>
       </div>
     </nav>
   </div>

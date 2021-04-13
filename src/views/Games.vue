@@ -15,7 +15,7 @@
     <button v-for="genre in genres" :key="genre" class="button is-primary is-outlined" @click="genreFilter(genre)">{{genre}}</button>
   </div>
   <div>
-    <table class="table is-bordered is-hoverable is-fullwidth"> 
+    <table class="table is-bordered is-fullwidth"> 
       <thead>
         <tr>
           <th>Game name</th>

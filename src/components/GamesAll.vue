@@ -1,5 +1,5 @@
 <template>
-  <tr @click="goToGameDetails(game.id)">
+  <tr class="clickable-paragraph" @click="goToGameDetails(game.id)">
     <td>{{ game.game_name }}</td>
     <td>{{ game.developer }}</td>
     <td>{{ game.genre }}</td>
