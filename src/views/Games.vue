@@ -47,10 +47,12 @@ import { defineComponent } from "vue";
 import { genres } from '../utils/arrays'
 
 export default defineComponent({
+  props: ["genre"],
   mounted: function () {
     gameService.getGame({}).then((games) => {
       this.allGames = games.data;
       this.filteredResources = games.data;
+      this.filteredGenre = this.genre;
       //console.log(this.filteredResources)
     });
   },
@@ -76,16 +78,6 @@ export default defineComponent({
   },
   methods: {
     genreFilter(genre: string) {
-      // if (genre!='')
-      //   this.filteredResources = this.allGames.filter(
-      //     (game) =>
-      //       game.genre === genre,
-      //       this.filteredGenre = genre,
-      //   );
-      // else {
-      //   this.filteredResources = this.allGames,
-      //   this.filteredGenre = ''
-      // }
       this.filteredGenre = genre;
     },
     filterGames(): void {

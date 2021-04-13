@@ -2,7 +2,7 @@
   <div v-if="gameData.length">No games in the library</div>
   <div class="column is-one-third is-3 m-4 card has-background-info-dark has-text-grey-lighter">
     <header class="card-header p-3 has-background-info-light" @click="goToGameDetails(gameData.id)">
-      <h2 class="card-header-title is-centered" style="font-family: 'Press Start 2P', cursive; font-size: 16px;">  {{gameData.game_name}} </h2>
+      <h2 class="card-header-title is-centered clickable-paragraph" style="font-family: 'Press Start 2P', cursive; font-size: 16px;">  {{gameData.game_name}} </h2>
     </header>
     <div class="card-content">
     developed by {{gameData.developer}} <br>

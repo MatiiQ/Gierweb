@@ -66,7 +66,8 @@ export default defineComponent({
       }
     },
     goToGamesGenres(genre: string) {
-        this.$router.push({ path: `/games/genres/${genre}`});
+        //this.$router.push({ path: `/games/genres/${genre}`});
+        this.$router.push({ name: 'Games', params: {genre: genre}});
       }
   },
 });
