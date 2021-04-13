@@ -8,7 +8,7 @@
     <h3>Available bookmarks</h3>
     <ul>
       <li><router-link to="/games">Games</router-link></li>
-      <li><router-link to="/libraries">Libraries</router-link></li>
+      <li><router-link to="/charts">Charts</router-link></li>
       <li><router-link to="/users">Users</router-link></li>
     </ul>
   </div>
