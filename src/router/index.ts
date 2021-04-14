@@ -39,7 +39,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/charts',
     name: 'Charts',
-    component: () => import('../views/Charts.vue') 
+    component: () => import('../views/Charts.vue'),
+    props: true
   }
 ]
 

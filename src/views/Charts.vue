@@ -1,44 +1,19 @@
 <template>
-  <chart2></chart2>
+<div>
+  <chart1 style="height: 850px; width: 900px; display: flex; flex-direction: column"></chart1>
+  <GenresGames style="height: 850px; width: 900px; display: flex; flex-direction: column"></GenresGames>
+</div>
 </template>
 
 <script lang="ts">
-import gameService from "../http/gameService";
-import { IGame } from "../utils/interfaces";
 import { defineComponent } from "vue";
 import Chart1 from "../components/Chart1.vue";
-import Chart2 from "../components/Chart2.vue";
-import { genres } from "../utils/arrays";
+import GenresGames from "../components/Chart2.vue";
 
 export default defineComponent({
-  /**mounted: function () {
-    gameService.getGame({}).then((games) => {
-      this.labels = games.data.splice(0, 10).map(function (x: { game_name: string; }) {
-        return x.game_name;
-      })
-      this.data_players = games.data.splice(0, 10).map(function (y: { players_number: number; }) {
-        return y.players_number;
-      })
-      this.data_sold = games.data.splice(0, 10).map(function (z: { sold: number; }) {
-        return z.sold;
-      })
-      console.log(this.labels);
-      console.log(this.data_players);
-      console.log(this.data_sold);
-      console.log(this.genres);
-    });
-  }, */
   components: {
-    Chart2,
-  },
-  data() {
-    return {
-      someGames: [] as IGame[], 
-      labels: [],
-      data_players: [],
-      data_sold: [],
-      genres: genres,
-    };
+    Chart1,
+    GenresGames,
   },
 });
 </script>
