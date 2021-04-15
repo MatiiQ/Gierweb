@@ -20,12 +20,6 @@ const routes: Array<RouteRecordRaw> = [
     props: true
   },
   {
-    path: '/games/genres/:genre',
-    name: 'GamesGenre',
-    component: () => import('../views/GamesGenres.vue'),
-    props: true
-  },
-  {
     path: '/users',
     name: 'Users',
     component: () => import('../views/Users.vue') 

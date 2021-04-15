@@ -31,7 +31,6 @@
 <script lang="ts">
 import gameIdService from "../http/gameIdService";
 import { IGame } from "../utils/interfaces";
-//import Game from "../components/GameDetail.vue"; KOMPONENT NIE DZIAŁA
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -41,10 +40,6 @@ export default defineComponent({
       this.gameDetails = game.data;
     });
   },
-  // KOMPONENT NIE DZIAŁA
-  //components: {
-  //  Game,
-  //},
   data() {
     return {
       gameDetails: [] as IGame[],
@@ -66,7 +61,6 @@ export default defineComponent({
       }
     },
     goToGamesGenres(genre: string) {
-        //this.$router.push({ path: `/games/genres/${genre}`});
         this.$router.push({ name: 'Games', params: {genre: genre}});
       }
   },

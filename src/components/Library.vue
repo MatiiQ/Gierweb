@@ -27,7 +27,6 @@ import gameIdService from '../http/gameIdService';
 
 export default defineComponent({
   props: {
-      //game: Object as () => IGame,
       game: Object as () => table2props,
       gameId: Number,
   },

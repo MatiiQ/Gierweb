@@ -5,7 +5,7 @@
         class="input"
         type="text"
         v-model="searchQuery"
-        placeholder="Search"
+        placeholder="First name or last name"
       />
     </div>
   </div>
