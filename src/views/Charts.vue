@@ -1,11 +1,17 @@
 <template>
+<div style="overflow: auto; white-space: nowrap">
   <p><b>Number of players for first 10 games</b></p>
-  <chart1 style="width: 1500px; display: flex; flex-direction: column"></chart1>
+  <chart1 style="width: 69%; display: flex; flex-direction: column"></chart1>
+</div>
+<div style="overflow: auto; white-space: nowrap">
   <br/><br/><p><b>Number of games from all genres</b></p>
-  <chart2 style="width: 1200px; display: flex; flex-direction: column"></chart2>
+  <chart2 style="width: 69%; display: flex; flex-direction: column"></chart2>
+</div>
 </template>
 
 <script lang="ts">
+//<chart1 style="width: 1500px; display: flex; flex-direction: column"></chart1>
+//<chart2 style="width: 1200px; display: flex; flex-direction: column"></chart2>
 import { defineComponent } from "vue";
 import Chart1 from "../components/Chart1.vue";
 import Chart2 from "../components/Chart2.vue";
