@@ -59,6 +59,6 @@ export default defineComponent({
     goToGameDetails(gameId: number) {
         this.$router.push({ path: `/games/${gameId}`});
     }
-  }
+  },
 })
 </script>

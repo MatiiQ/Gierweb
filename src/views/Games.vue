@@ -11,7 +11,7 @@
   </div>
   <p>Pick a genre!</p>
   <div class="buttons has-addons is-centered">
-    <button class="button is-danger is-outlined" @click="genreFilter('')">Reset genre</button>
+    <button class="button is-danger is-outlined" @click="genreFilter('')" style="margin-right: 10px;">Reset genre</button>
     <button v-for="genre in genres" :key="genre" class="button is-primary is-outlined" @click="genreFilter(genre)">{{genre}}</button>
   </div>
   <div>
