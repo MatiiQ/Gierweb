@@ -3,6 +3,9 @@
     <h1>{{ msg }}</h1>
     <p>Our app is presenting a database of games.</p>
     <p>We have added some users with their catalogue of games to browse through.</p>
+    <p>There are two available charts created with 
+      <a href="https://vue3-chart-v2.netlify.app/" target="_blank" rel="noopener">vue3-char-v2</a>
+    </p>
     <p>All data has been generated with 
       <a href="https://mockaroo.com" target="_blank" rel="noopener">Mockaroo</a>
     </p>

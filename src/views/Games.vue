@@ -53,9 +53,7 @@ export default defineComponent({
       this.allGames = games.data;
       this.filteredResources = games.data;
       this.filteredGenre = this.genre;
-      //console.log(this.filteredResources) // SĄ DANE
     });
-    //console.log(filteredResources); // NIE MA DANYCH
   },
   components: {
     Game,

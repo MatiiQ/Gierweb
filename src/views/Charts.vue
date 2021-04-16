@@ -10,8 +10,6 @@
 </template>
 
 <script lang="ts">
-//<chart1 style="width: 1500px; display: flex; flex-direction: column"></chart1>
-//<chart2 style="width: 1200px; display: flex; flex-direction: column"></chart2>
 import { defineComponent } from "vue";
 import Chart1 from "../components/Chart1.vue";
 import Chart2 from "../components/Chart2.vue";
