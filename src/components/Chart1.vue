@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from "vue";
 import { Bar } from "vue3-chart-v2";
+import { labels1 , datas1 } from "../utils/arrays";
 
 export default defineComponent({
   name: "Game stats",
@@ -9,14 +10,14 @@ export default defineComponent({
     return {
       state: {
         chartData: {
-           labels: ["Konklux","Tres-Zap","Treeflex","Andalax","Veribet","Home Ing","Zaam-Dox","Cardguard","Zontrax","Treeflex"],
-            datasets: [
-              {
-                label: 'Number of players',
-                backgroundColor: '#42b983',
-                data: [1435,11223,31289,147941,25480,102524,58874,3283,122727,13988],
-              }
-            ]
+          labels: labels1,
+          datasets: [
+            {
+              label: 'Number of players',
+              backgroundColor: '#42b983',
+              data: datas1,
+            }
+          ]
         },
         chartOptions: {
           responsive: false,
