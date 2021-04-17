@@ -1,11 +1,13 @@
 <template>
 <div style="overflow: auto; white-space: nowrap">
   <p><b>Number of players for first 10 games</b></p>
-  <chart1 style="width: 69%; display: flex; flex-direction: column"></chart1>
+  <chart1 style="width: 69%; display: flex; flex-direction: column; margin-left: auto;
+    margin-right: auto;"></chart1>
 </div>
 <div style="overflow: auto; white-space: nowrap">
   <br/><br/><p><b>Number of games from all genres</b></p>
-  <chart2 style="width: 69%; display: flex; flex-direction: column"></chart2>
+  <chart2 style="width: 69%; display: flex; flex-direction: column; margin-left: auto;
+    margin-right: auto;"></chart2>
 </div>
 </template>
 
@@ -23,7 +25,6 @@ export default defineComponent({
   },
   mounted () {
     this.getData()
-    //console.log(this.allGames)
   },
   data() {
     return {
