@@ -12,9 +12,6 @@
     <p>Backend has been done with ExpressJS and API with endpoints are handled by 
       <a href="https://www.heroku.com" target="_blank" rel="noopener">Heroku</a>
     </p>
-    <p>Application has been deployed on AWS with 
-      <a href="https://aws.amazon.com/amplify/hosting" target="_blank" rel="noopener">AWS Amplify</a>
-    </p>
     <h3>Available bookmarks</h3>
     <ul>
       <li><router-link to="/games">Games</router-link></li>
